@@ -2,10 +2,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const options = {
         strings: [
-            "Olá, mundo!",
-            "Este é um texto animado.",
-            "Criado com Typed.js.",
-            "É fácil e divertido! 🎉"
+            "dps termino",
+            "fezes",
+            "ai que fome",
+            "🚛🚛🚛"
         ],
         typeSpeed: 50, // Velocidade da digitação (em milissegundos)
         backSpeed: 30, // Velocidade para apagar (em milissegundos)

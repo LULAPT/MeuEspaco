@@ -3,17 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texto Animado com Typed.js</title>
+    <title>𝚠𝚎𝚕𝚌𝚘𝚖𝚎 . . .</title>
     <link rel="stylesheet" href="/SOCIALS/FinalPage/finalscreen.css">
 </head>
 <body>
+
+    <div id="background"></div>
+    <div id="background-layer-1" class="background-layer"></div>
+    <div id="background-layer-2" class="background-layer"></div>
+
+    <div class="music-player">
+        <!-- Ícone de play/pause -->
+        <i id="playPauseIcon" class="fas fa-play play-pause-icon"></i>
+        <!-- Controle de volume -->
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1">
+        </div>
+    </div>
+
+    <!-- Áudio -->
+    <audio id="audio" src="/media/The Blonde - TV Girl.mp3" autoplay></audio>
+
     <div class="container">
-        <h1>🚧🚧🚧</h1>
-        <span id="typed-text"></span>
+        <div class="content">
+            <h1>Dharlan</h1>
+            <img class="avatarDecoration"  src="/media/avatardecoration.png">
+            <img  class="profile" src="/media/profile.jpg">
+            <p><span id="wave"></span></p>
+        </div>
+        <div class="popover">
+            Hedgehog's dilemma 💬
+        </div>
+        <div class="icons-marcas">
+            <a href="https://instagram.com/xanaxirl" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i></a>
+            <a href="https://x.com/kassajam" target="_blank"><i class="fa-brands fa-twitter fa-2xl" style="color: #ffffff;"></i></a>
+            <a href="https://discord.gg/FeuTBCrfyX" target="_blank"><i class="fa-brands fa-discord fa-2xl" style="color: #ffffff;"></i></a>
+            <a href="https://steamcommunity.com/id/DHRLN/" target="_blank"><i class="fa-brands fa-steam fa-2xl" style="color: #ffffff;"></i></a></div>
+    </div>
+
+    <div class="profile-views-container">
+        <!-- Ícone de visualizações de perfil -->
+        <i class="fas fa-eye profile-views-icon"></i>
+        <!-- Texto de visualizações -->
+        <span class="profile-views-text">454</span>
     </div>
 
     <!-- Inclua a biblioteca Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="final.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
 </html>

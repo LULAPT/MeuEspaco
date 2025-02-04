@@ -1,0 +1,376 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(/media/misato.png);
+    background-repeat: no-repeat;
+    cursor: crosshair;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    padding: 100px;
+    backdrop-filter: #24242425;
+    background-size: cover;
+    background-origin: border-box;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    animation: pulse 1.8s infinite;
+    width: fit-content;
+}
+
+.container .profile {
+    pointer-events: none;
+    border-radius: 50%;
+    height: 118px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 123px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.content h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ffffff;
+    pointer-events: none;
+    background-image: url(http://i752.photobucket.com/albums/xx164/optiikzz/rc599e.gif);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+  @keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ffffff52, 0 0 10px #fff, 0 0 20px #b8b8b8, 0 0 30px #c4c4c4, 0 0 40px
+    }
+    100% {
+        text-shadow: 0 0 10px #ffffff63, 0 0 20px #fff, 0 0 30px #d3d3d3, 0 0 40px #c5c5c5, 0 0 50px
+    }
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    pointer-events: none;
+}
+
+/* .image-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.image-gallery img {
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+} */
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: background-position 0.2s ease-out;
+}
+
+#background-layer-1 {
+    background: url(/media/misato.png);
+}
+
+/* #background-layer-2 {
+    background: url(/media/misato.png);
+    opacity: 0.5;
+} */
+
+.avatarDecoration {
+    pointer-events: none;
+    position: absolute;
+    top: 152px;
+    left: 98px;
+    pointer-events: none;
+    contain: paint;
+    height: 150px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 155px;
+}
+
+.icons-marcas {
+    /* padding: 15px; */
+    letter-spacing: 1px;
+    transition: transform 0.3s ease; /* Transição suave *
+    /* -webkit-animation: glow 0.8s ease-in-out infinite alternate;
+    -moz-animation: glow 0.8s ease-in-out infinite alternate;
+     animation: glow 0.8 ease-in-out infinite alternate; */
+}
+
+.icons-marcas:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+}
+
+.fa-instagram {
+    transition: transform 0.3s ease;
+}
+
+.fa-instagram:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+}
+
+.fa-twitter {
+    transition: transform 0.3s ease;
+}
+
+.fa-twitter:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+}
+
+.fa-discord {
+    transition: transform 0.3s ease;
+}
+
+.fa-discord:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+}
+
+.fa-steam {
+    transition: transform 0.3s ease;
+}
+
+.fa-steam:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+}
+
+        /* Popover */
+        .popover {
+            visibility: hidden; /* Oculta o popover por padrão */
+            opacity: 0;
+            position: absolute;
+            bottom: 100%; /* Posiciona o popover acima do ícone */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10; /* Garante que o popover fique acima de outros elementos */
+        }
+
+        /* Seta do popover */
+        .popover::after {
+            content: "";
+            position: absolute;
+            top: 100%; /* Posiciona a seta abaixo do popover */
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        /* Mostra o popover ao passar o mouse sobre o ícone */
+        .container:hover .popover {
+            visibility: visible;
+            opacity: 1;
+        }
+
+                /* Estilo do container */
+                .profile-views-container {
+                    background-color: rgba(0, 0, 0, 0.555);
+                    backdrop-filter: blur(5px);
+                    box-shadow: 0 0 25px rgba(0, 0, 0, 0.548);
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 10px 15px;
+                    border-radius: 20px; /* Bordas arredondadas */
+                    font-family: Arial, sans-serif;
+                    margin-top: 100px;
+                }
+        
+                /* Estilo do ícone */
+                .profile-views-icon {
+                    font-size: 18px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+                    color: #ffffff; /* Cor do ícone */
+                    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+                }
+        
+                /* Estilo do texto */
+                .profile-views-text {
+                    color: #ffffff; /* Cor do texto */
+                    font-family: Arial, sans-serif;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+                    font-weight: bold;
+                    font-size: 1.5em;;
+                }
+
+                #overlay {
+                    position: fixed;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+                    background-color: rgba(0, 0, 0, 0.4);
+                    backdrop-filter: #24242425;
+                    backdrop-filter: blur(5px);
+                    animation: pulse 1.8s infinite;
+                    width: fit-content;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                    opacity: 1; /* Inicialmente visível */
+                    transition: opacity 0.5s ease-in-out; /* Transição suave */
+                }
+                
+                #overlay.hidden {
+                    opacity: 0; /* Esconde o overlay */
+                    pointer-events: none; /* Impede interação com o overlay escondido */
+                }
+                
+                #enterButton {
+                    padding: 15px 30px;
+                    font-size: 20px;
+                    color: #fff;
+                    backdrop-filter: #24242425;
+                    background-color: rgb(14, 15, 29);
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+                    backdrop-filter: blur(5px);
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: ease-in 0.3s;
+                }
+                
+                #enterButton:hover {
+                    background-color: rgba(0, 0, 0, 0.377);
+                    cursor: crosshair;
+                }
+                
+                #content {
+                    padding: 20px;
+                    text-align: center;
+                    opacity: 0; /* Inicialmente invisível */
+                    transition: opacity 0.5s ease-in-out 0.5s; /* Transição suave com delay */
+                }
+                
+                #content.visible {
+                    opacity: 1; /* Torna o conteúdo visível */
+                }
+
+                 /* PLAYER DE MSC */
+
+                /* .player {
+                    backdrop-filter: #24242425;
+                    background-size: cover;
+                    backdrop-filter: blur(5px);
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 15px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+                    padding: 20px;
+                    width: 300px;
+                    text-align: center;
+                    margin-left: 400px;
+                    position: fixed;
+                }
+                
+                .cover img {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 10px;
+                    margin-bottom: 15px;
+                }
+                
+                .info {
+                    margin-bottom: 20px;
+                }
+                
+                .info h2 {
+                    margin: 0;
+                    font-size: 20px;
+                    color: #ffffff;
+                }
+                
+                .info p {
+                    margin: 5px 0 0;
+                    font-size: 14px;
+                    color: #ffffff;
+                }
+                
+                .controls {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+                }
+                
+                .controls button {
+                    background: none;
+                    border: none;
+                    font-size: 24px;
+                    color: #ffffff;
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+                }
+                
+                .controls button:hover {
+                    color: #007BFF;
+                }
+                
+                .progress-container {
+                    background-color: #e0e0e0;
+                    border-radius: 5px;
+                    height: 5px;
+                    width: 100%;
+                    cursor: pointer;
+                }
+                
+                .progress {
+                    background-color: #007BFF;
+                    border-radius: 5px;
+                    height: 100%;
+                    width: 0%;
+                    transition: width 0.1s ease;
+                } */

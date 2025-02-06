@@ -54,36 +54,36 @@ document.getElementById('enterButton').addEventListener('click', function() {
     // Adiciona a classe para mostrar o conteúdo com animação
     setTimeout(() => {
         content.classList.add('visible');
-    }, 500); // Delay para sincronizar com a transição do overlay
+    }, 50); // Delay para sincronizar com a transição do overlay
 });
 
 const songs = [
     {
         title: "The Blonde",
         artist: "Tv Girl",
-        src: "/media/The Blonde - TV Girl.mp3",
+        src: src="/media/yume.mp3",
         cover: "https://akamai.sscdn.co/uploadfile/letras/albuns/1/4/c/1/888411709751393.jpg"
     },
 ];
 
-let currentSongIndex = 0;
-const audio = document.getElementById('audio');
-const title = document.getElementById('title');
-const artist = document.getElementById('artist');
-const cover = document.querySelector('.cover img');
+// let currentSongIndex = 0;
+// const audio = document.getElementById('audio');
+// const title = document.getElementById('title');
+// const artist = document.getElementById('artist');
+// const cover = document.querySelector('.cover img');
 const progressContainer = document.querySelector('.progress-container');
 const progress = document.querySelector('.progress');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
-// Carrega a música atual
-function loadSong(song) {
-    title.textContent = song.title;
-    artist.textContent = song.artist;
-    audio.src = song.src;
-    cover.src = song.cover;
-}
+// // Carrega a música atual
+// function loadSong(song) {
+//     title.textContent = song.title;
+//     artist.textContent = song.artist;
+//     audio.src = song.src;
+//     cover.src = song.cover;
+// }
 
 // Inicia ou pausa a música
 function togglePlay() {
@@ -137,6 +137,16 @@ audio.addEventListener('ended', nextSong); // Avança automaticamente para a pr�
 
 // Carrega a primeira música ao iniciar
 loadSong(songs[currentSongIndex]);
+
+// Inicia o autoplay quando a página carregar
+window.addEventListener('load', startAutoplay);
+
+// Permite que o áudio seja reproduzido após a interação do usuário
+document.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+    }
+});
 
 
 

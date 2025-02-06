@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
 /* Reset básico */
 * {
     margin: 0;
@@ -13,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(/media/misato.png);
+    /* background-image: url(/media/misato.png); */
     background-repeat: no-repeat;
     cursor: crosshair;
 }
@@ -30,7 +32,6 @@ body {
     backdrop-filter: #24242425;
     background-size: cover;
     background-origin: border-box;
-    width: 100%;
     backdrop-filter: blur(5px);
     animation: pulse 1.8s infinite;
     width: fit-content;
@@ -77,12 +78,22 @@ body {
     }
 }
 
+@keyframes glow2 {
+    0% {
+        text-shadow: 0 0 5px #ffffff52, 0 0 5px #fff, 0 0 5px #b8b8b8, 0 0 5px #c4c4c4, 0 0 5px
+    }
+    100% {
+        text-shadow: 0 0 5px #ffffff63, 0 0 5px #fff, 0 0 5px #d3d3d3, 0 0 5px #c5c5c5, 0 0 5px
+    }
+}
+
 .content p {
     font-size: 1.2em;
     color: #ffffff;
     margin-bottom: 20px;
     padding-top: 20px;
     pointer-events: none;
+    font-family: 'Satoshi', sans-serif !important;
 }
 
 /* .image-gallery {
@@ -115,10 +126,10 @@ body {
     background: url(/media/misato.png);
 }
 
-/* #background-layer-2 {
+ #background-layer-2 {
     background: url(/media/misato.png);
-    opacity: 0.5;
-} */
+    opacity: 0.2;
+} 
 
 .avatarDecoration {
     pointer-events: none;
@@ -152,6 +163,9 @@ body {
 
 .fa-instagram:hover {
     transform: scale(1.2); /* Aumenta o tamanho em 20% */
+    -webkit-animation: glow2 1s ease-in-out infinite alternate;
+    -moz-animation: glow2 1s ease-in-out infinite alternate;
+    animation: glow2 1s ease-in-out infinite alternate;
 }
 
 .fa-twitter {
@@ -160,6 +174,9 @@ body {
 
 .fa-twitter:hover {
     transform: scale(1.2); /* Aumenta o tamanho em 20% */
+    -webkit-animation: glow2 1s ease-in-out infinite alternate;
+    -moz-animation: glow2 1s ease-in-out infinite alternate;
+    animation: glow2 1s ease-in-out infinite alternate;
 }
 
 .fa-discord {
@@ -168,6 +185,9 @@ body {
 
 .fa-discord:hover {
     transform: scale(1.2); /* Aumenta o tamanho em 20% */
+    -webkit-animation: glow2 1s ease-in-out infinite alternate;
+    -moz-animation: glow2 1s ease-in-out infinite alternate;
+    animation: glow2 1s ease-in-out infinite alternate;
 }
 
 .fa-steam {
@@ -176,6 +196,9 @@ body {
 
 .fa-steam:hover {
     transform: scale(1.2); /* Aumenta o tamanho em 20% */
+    -webkit-animation: glow2 1s ease-in-out infinite alternate;
+    -moz-animation: glow2 1s ease-in-out infinite alternate;
+    animation: glow2 1s ease-in-out infinite alternate;
 }
 
         /* Popover */
@@ -216,15 +239,15 @@ body {
 
                 /* Estilo do container */
                 .profile-views-container {
-                    background-color: rgba(0, 0, 0, 0.555);
+                    background-color: rgba(0, 0, 0, 0.068);
                     backdrop-filter: blur(5px);
-                    box-shadow: 0 0 25px rgba(0, 0, 0, 0.548);
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
                     display: inline-flex;
                     align-items: center;
                     padding: 10px 15px;
                     border-radius: 20px; /* Bordas arredondadas */
                     font-family: Arial, sans-serif;
-                    margin-top: 100px;
+                    margin-top: 40px;
                 }
         
                 /* Estilo do ícone */
@@ -238,10 +261,9 @@ body {
                 /* Estilo do texto */
                 .profile-views-text {
                     color: #ffffff; /* Cor do texto */
-                    font-family: Arial, sans-serif;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
                     font-weight: bold;
-                    font-size: 1.5em;;
+                    font-size: 1.3em;
                 }
 
                 #overlay {
@@ -270,14 +292,14 @@ body {
                 }
                 
                 #enterButton {
-                    padding: 15px 30px;
+                    padding: 400px 900px;
                     font-size: 20px;
                     color: #fff;
-                    backdrop-filter: #24242425;
-                    background-color: rgb(14, 15, 29);
+                    /* backdrop-filter: #24242425; */
+                    background-color: rgba(14, 15, 29, 0);
                     border-radius: 10px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
-                    backdrop-filter: blur(5px);
+                    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
+                    backdrop-filter: blur(5px); */
                     border: none;
                     border-radius: 5px;
                     cursor: pointer;
@@ -285,7 +307,7 @@ body {
                 }
                 
                 #enterButton:hover {
-                    background-color: rgba(0, 0, 0, 0.377);
+                    /* background-color: rgba(0, 0, 0, 0.377); */
                     cursor: crosshair;
                 }
                 
@@ -293,7 +315,7 @@ body {
                     padding: 20px;
                     text-align: center;
                     opacity: 0; /* Inicialmente invisível */
-                    transition: opacity 0.5s ease-in-out 0.5s; /* Transição suave com delay */
+                    transition: opacity 2s ease-in-out 0.5s; /* Transição suave com delay */
                 }
                 
                 #content.visible {
@@ -302,7 +324,7 @@ body {
 
                  /* PLAYER DE MSC */
 
-                /* .player {
+                 .player {
                     backdrop-filter: #24242425;
                     background-size: cover;
                     backdrop-filter: blur(5px);
@@ -310,10 +332,17 @@ body {
                     border-radius: 15px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
                     padding: 20px;
-                    width: 300px;
+                    width: 350px;
                     text-align: center;
-                    margin-left: 400px;
-                    position: fixed;
+                    bottom: 0px;
+                    position: relative;
+                    transition: all 0.3s ease;
+                    margin-top: 50px;
+                    max-height: 90px;
+                }
+
+                .player:hover {
+                    transform: scale(1.05);
                 }
                 
                 .cover img {
@@ -352,11 +381,14 @@ body {
                     font-size: 24px;
                     color: #ffffff;
                     cursor: pointer;
-                    transition: color 0.3s ease;
+                    transition: transform 0.3s ease;
                 }
                 
                 .controls button:hover {
-                    color: #007BFF;
+                    -webkit-animation: glow2 1s ease-in-out infinite alternate;
+                    -moz-animation: glow2 1s ease-in-out infinite alternate;
+                    animation: glow2 1s ease-in-out infinite alternate;
+                    transform: scale(1.2); /* Aumenta o tamanho em 20% */
                 }
                 
                 .progress-container {
@@ -368,9 +400,9 @@ body {
                 }
                 
                 .progress {
-                    background-color: #007BFF;
+                    background-color: #757575;
                     border-radius: 5px;
                     height: 100%;
                     width: 0%;
                     transition: width 0.1s ease;
-                } */
+                }

@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = {
         strings: [
             "Amp it up.",
-            "We are 4ever.",
-            "Never hunger",
-            "Never tire",
-            "Never fear",
+            "we are 4ever.",
+            "Never hunger.",
+            "Never tired.",
+            "Never fear.",
             ":wave:",
         ],
         typeSpeed: 100, // Velocidade da digitação (em milissegundos)
@@ -166,22 +166,6 @@ document.addEventListener('mousemove', (event) => {
   cursor.style.left = `${mouseX}px`;
   cursor.style.top = `${mouseY}px`;
 });
-
-// Texto que será exibido no título
-const titleText = "@sleepmix on discord";
-let position = 0;
-
-function animateTitle() {
-    // Move o texto para a esquerda
-    const newTitle = titleText.substring(position) + titleText.substring(0, position);
-    document.title = newTitle;
-
-    // Atualiza a posição para o próximo caractere
-    position = (position + 1) % titleText.length;
-}
-
-// Define o intervalo de animação (200ms)
-setInterval(animateTitle, 200);
 
 
 

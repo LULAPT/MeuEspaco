@@ -34,6 +34,7 @@ body {
   }
 
 .container {
+    height: auto;
     background-color: rgba(12, 12, 12, 0.356);
     padding: 20px;
     border-radius: 10px;
@@ -465,4 +466,102 @@ body {
                     50% {
                         transform: translateY(-3px);
                     }
+                }
+        
+                /* Estilo do popup */
+                .popup-overlay {
+                    visibility: hidden; /* Oculta o popup sem ocupar espaço */
+                    opacity: 0; /* Torna o popup transparente */
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: opacity 0.9s ease-in-out, visibility 0.8s ease-in-out; /* Animação suave */
+                    z-index: 9999;
+                    cursor: url('/media/Dot\ No.cur'), auto;
+                    backdrop-filter: #24242425;
+                    backdrop-filter: blur(2px);
+                }
+        
+                .popup-overlay.active {
+                    visibility: visible; /* Torna o popup visível */
+                    opacity: 1; /* Torna o popup opaco */
+                }
+        
+                .popup {
+                    border: 1px solid rgb(29, 29, 29);
+                    font-family: Arial, sans-serif;
+                    background-color: rgb(12, 12, 12);
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                    max-width: 300px;
+                    margin-bottom: 100px;
+                    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.548);
+                    box-shadow: glow;
+                }
+        
+                .popup h2 {
+                    margin-top: 0;
+                    font-size: 1.5em;
+                    color: #ffffff;
+                    padding: 10px;
+                    font-weight: bold;
+                }
+        
+                .popup p {
+                    font-size: 1em;
+                    color: #ffffff;
+                    font-weight: bold;
+                }
+        
+                .popup-buttons {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    cursor: url('/media/Dot\ No.cur'), auto;
+                    transition: transform 0.3s ease;
+                }
+        
+                .popup-buttons button {
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 1em;
+                    cursor: url('/media/Dot\ No.cur'), auto;
+                    transition: transform 0.3s ease;
+                }
+        
+                .popup-buttons button.confirm {
+                    background-color: #303030;
+                    color: white;
+                    cursor: url('/media/Dot\ No.cur'), auto;
+                    border: 1px solid rgb(29, 29, 29);
+                    box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.548);
+                    max-width: 100px;
+                    width: 100px;
+                }
+        
+                .popup-buttons button.confirm:hover {
+                    background-color: #999;
+                    transform: scale(1.1);
+                }
+        
+                .popup-buttons button.cancel {
+                    background-color: #303030;
+                    color: #ffffff;
+                    border: 1px solid rgb(29, 29, 29);
+                    box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.548);
+                    max-width: 100px;
+                }
+        
+                .popup-buttons button.cancel:hover {
+                    background-color: #999;
+                    transform: scale(1.1);
                 }

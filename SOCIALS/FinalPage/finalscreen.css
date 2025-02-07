@@ -11,7 +11,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +19,26 @@ body {
     /* background-image: url(/media/misato.png); */
     background-repeat: no-repeat;
     /* cursor: crosshair; */
+    overflow: hidden; /* Hide scrollbars */
+    filter: contrast(1.10);
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+  }
+  
+  ::selection {
+    color: rgb(255, 255, 255);
+    background: rgb(102, 102, 102);
+  }
+
 .container {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(12, 12, 12, 0.356);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
-    max-width: 800px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.548);
+    max-width: 355px;
     width: 100%;
     text-align: center;
     padding: 100px;
@@ -36,6 +48,7 @@ body {
     backdrop-filter: blur(5px);
     animation: pulse 1.8s infinite;
     width: fit-content;
+    border: 1px solid white;
 }
 
 .container .profile {
@@ -124,12 +137,16 @@ body {
 }
 
 #background-layer-1 {
-    background: url(/media/misato.png);
+    background: url(/media/animemeninawall.jpg);
+    background-repeat: no-repeat;
+    zoom: 90%;
 }
 
  #background-layer-2 {
-    background: url(/media/misato.png);
-    opacity: 0.1;
+    background: url(/media/animemeninawall.jpg);
+    opacity: 0.4;
+    background-repeat: no-repeat;
+    zoom: 90%;
 } 
 
 .avatarDecoration {
@@ -220,6 +237,7 @@ body {
             z-index: 10; /* Garante que o popover fique acima de outros elementos */
             font-weight: bold;
             margin-bottom: 20px;
+            border: 1px solid white;
         }
 
         /* Seta do popover */
@@ -231,7 +249,8 @@ body {
             transform: translateX(-50%);
             border-width: 5px;
             border-style: solid;
-            border-color: rgba(0, 0, 0, 0.308) transparent transparent transparent;
+            border-color: rgba(255, 255, 255, 0.308) transparent transparent transparent;
+            border: 1px solid white;
         }
 
         /* Mostra o popover ao passar o mouse sobre o ícone */
@@ -251,6 +270,9 @@ body {
                     border-radius: 20px; /* Bordas arredondadas */
                     font-family: Arial, sans-serif;
                     margin-top: 40px;
+                    border: 1px solid white;
+                    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.548);
+                    box-shadow: glow;
                 }
         
                 /* Estilo do ícone */
@@ -259,6 +281,9 @@ body {
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
                     color: #ffffff; /* Cor do ícone */
                     margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+                    -webkit-animation: glow1 1s ease-in-out infinite alternate;
+                    -moz-animation: glow1 1s ease-in-out infinite alternate;
+                    animation: glow1 1s ease-in-out infinite alternate;
                 }
         
                 /* Estilo do texto */
@@ -267,6 +292,9 @@ body {
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
                     font-weight: bold;
                     font-size: 1.3em;
+                    -webkit-animation: glow1 1s ease-in-out infinite alternate;
+                    -moz-animation: glow1 1s ease-in-out infinite alternate;
+                    animation: glow1 1s ease-in-out infinite alternate;
                 }
 
                 #overlay {
@@ -332,17 +360,18 @@ body {
                     backdrop-filter: #24242425;
                     background-size: cover;
                     backdrop-filter: blur(5px);
-                    background-color: rgba(0, 0, 0, 0.4);
+                    background-color: rgba(12, 12, 12, 0.356);
                     border-radius: 15px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.548);
-                    padding: 20px;
+                    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.548);
+                    padding: 15px;
                     width: 350px;
                     text-align: center;
                     bottom: 0px;
                     position: relative;
                     transition: all 0.3s ease;
-                    margin-top: 50px;
-                    max-height: 90px;
+                    margin-top: 70px;
+                    max-height: 150px;
+                    border: 1px solid white;
                 }
 
                 .player:hover {
@@ -357,7 +386,7 @@ body {
                 }
                 
                 .info {
-                    margin-bottom: 20px;
+                    margin-bottom: 0px;
                 }
                 
                 .info h2 {
@@ -367,7 +396,7 @@ body {
                 }
                 
                 .info p {
-                    margin: 5px 0 0;
+                    margin: 0px 0 0;
                     font-size: 14px;
                     color: #ffffff;
                 }
@@ -409,4 +438,31 @@ body {
                     height: 100%;
                     width: 0%;
                     transition: width 0.1s ease;
+                }
+
+                .wave-text span {
+                    display: inline-block;
+                    animation: wave 2s ease-in-out infinite;
+                }
+                
+                .wave-text span:nth-child(1) {
+                    animation-delay: 0s;
+                }
+                .wave-text span:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+                .wave-text span:nth-child(3) {
+                    animation-delay: 0.4s;
+                }
+                .wave-text span:nth-child(4) {
+                    animation-delay: 0.6s;
+                }
+                
+                @keyframes wave {
+                    0%, 100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-3px);
+                    }
                 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝚜𝚎𝚊𝚛𝚌𝚑 . . .</title>
+    <link rel="stylesheet" href="/SOCIALS/socials.css">
+    <link rel="icon" type="image/png" href="/media/balao.png" />
+</head>
+<body>
+
+    <main id="container">
+        <div id="terminal">
+          <!-- Terminal Bar -->       
+          <section id="terminal__bar">          
+            <div id="bar__buttons">            
+              <button class="bar__button" id="bar__button--exit">&#10005;</button>            
+              <button class="bar__button">&#9472;</button>                
+              <button class="bar__button">&#9723;</button>          
+            </div>          
+            <p id="bar__user">dharl@ubuntu: ~</p>        
+          </section>        
+          <!-- Terminal Body -->        
+          <section id="terminal__body">          
+              <div id="terminal__prompt">            
+                  <span id="terminal__prompt--user">dharl@ubuntu:</span>            
+                  <span id="terminal__prompt--location">~</span>            
+                  <span id="terminal__prompt--bling">$</span>            
+                  <span id="terminal__prompt--cursor"></span>   
+                  <h1 class="verdetexto">
+                    <span id="typed-text"></span>
+                  </h1>      
+                </div>        
+            </section>      
+        </div>    
+      </main>
+
+    <label>
+        <div class="search-container">
+            <i data-feather="hash"></i>
+            <input type="text" id="searchbar" placeholder="new-channel">
+            <ul id="suggestions">
+                <li href="/SOCIALS/FinalPage/finalscreen.html">Dharlan</li>
+            </ul>
+        </div>
+    </label>
+    
+      <script src="https://unpkg.com/feather-icons"></script>
+      <script src="autocomplete.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script src="script.js"></script>
+</body>
+</html>

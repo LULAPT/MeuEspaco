@@ -41,6 +41,7 @@ body {
 ::-moz-selection { /* Code for Firefox */
     color: rgb(255, 255, 255);
     background: rgb(255, 255, 255);
+
   }
   
   ::selection {
@@ -326,8 +327,78 @@ body {
                     justify-content: center;
                     align-items: center;
                     z-index: 1000;
-                    opacity: 1; /* Inicialmente visível */
-                    transition: opacity 0.5s ease-in-out; /* Transição suave */
+                    transition: opacity 0.8s ease-in-out; /* Transição suave */
+                    transition-duration: 3000ms;
+                    transition-timing-function: ease;
+                    opacity: 1;
+                }
+
+                @-webkit-keyframes fadeInFromNone {
+                    0% {
+                        display: none;
+                        opacity: 0;
+                    }
+                
+                    1% {
+                        display: block;
+                        opacity: 0;
+                    }
+                
+                    100% {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+                
+                @-moz-keyframes fadeInFromNone {
+                    0% {
+                        display: none;
+                        opacity: 0;
+                    }
+                
+                    1% {
+                        display: block;
+                        opacity: 0;
+                    }
+                
+                    100% {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+                
+                @-o-keyframes fadeInFromNone {
+                    0% {
+                        display: none;
+                        opacity: 0;
+                    }
+                
+                    1% {
+                        display: block;
+                        opacity: 0;
+                    }
+                
+                    100% {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+                
+                @keyframes fadeInFromNone {
+                    0% {
+                        display: none;
+                        opacity: 0;
+                    }
+                
+                    1% {
+                        display: block;
+                        opacity: 0;
+                    }
+                
+                    100% {
+                        display: block;
+                        opacity: 1;
+                    }
                 }
                 
                 #overlay.hidden {
@@ -493,7 +564,7 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    transition: opacity 0.9s ease-in-out, visibility 0.8s ease-in-out; /* Animação suave */
+                    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Animação suave */
                     z-index: 9999;
                     cursor: url('/media/WinOS\ Pointer.cur'), auto;
                     backdrop-filter: #24242425;
@@ -562,7 +633,6 @@ body {
                 }
         
                 .popup-buttons button.confirm:hover {
-                    background-color: #999;
                     transform: scale(1.1);
                 }
         
@@ -576,7 +646,6 @@ body {
                 }
         
                 .popup-buttons button.cancel:hover {
-                    background-color: #999;
                     transform: scale(1.1);
                 }
 

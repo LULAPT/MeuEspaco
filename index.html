@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❮❯</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="background"></div>
+    <div id="background-layer-1" class="background-layer"></div>
+    <div id="background-layer-2" class="background-layer"></div>
+
+    <div class="container">
+        <header>
+            <h1><span>D</span>harlan</h1>
+            <p>❝ (_　_)。゜zｚＺ ❞</p>
+        </header>
+        <main>
+            <a href="/SOCIALS/socials.html" class="btn-primary">Enter</a>
+        </main>
+        <footer>
+            <p>&copy; 2025 dh.lol Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+                // Texto que será exibido no <title>
+                    const titleText = "　ζ　ξ　ζ　ι　ζ　ξ　ζ　";
+        let index = 0;
+
+        // Função para animar o título
+        function typeTitle() {
+            if (index < titleText.length) {
+                // Atualiza o <title> com uma letra adicional
+                document.title += titleText[index];
+                index++;
+                // Define um intervalo para a próxima letra
+                setTimeout(typeTitle, 300); // Ajuste o tempo (em milissegundos) para controlar a velocidade
+            } else {
+                // Reinicia a animação após um pequeno delay
+                setTimeout(() => {
+                    document.title = ""; // Limpa o título
+                    index = 0; // Reinicia o índice
+                    typeTitle(); // Começa novamente
+                }, 2000); // Espera 2 segundos antes de reiniciar
+            }
+        }
+
+        // Inicia a animação quando a página carrega
+        typeTitle();
+    </script>
+</body>
+</html>

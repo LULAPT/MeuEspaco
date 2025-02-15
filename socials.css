@@ -8,7 +8,6 @@ body {
   display: grid;
   place-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #03060a00;
   cursor: none;
   overflow: hidden; /* Hide scrollbars */
 }

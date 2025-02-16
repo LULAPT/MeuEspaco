@@ -17,7 +17,6 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #333;
     color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
@@ -137,6 +136,7 @@ footer {
     z-index: -1;
     transition: background-position 0.1s ease-out;
     transition: background-position 0.2s ease-out; /* Increased duration */
+    will-change: transform, opacity;
 }
 
 .background-layer {
@@ -147,17 +147,20 @@ footer {
     height: 100%;
     z-index: -1;
     transition: background-position 0.2s ease-out;
+    will-change: transform, opacity;
 }
 
 #background-layer-1 {
     background: url(/media/1718806537675377.png);
     background-size: cover;
+    will-change: transform, opacity;
 }
 
 #background-layer-2 {
     background: url(/media/1718806537675377.png);
     opacity: 0.2;
     background-size: cover;
+    will-change: transform, opacity;
 }
 
 /* Estilos para o cursor */

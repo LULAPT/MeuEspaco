@@ -1,9 +1,3 @@
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space') {
-        revealContent();
-    }
-});
-
 function revealContent() {
     const lockscreen = document.getElementById('lockscreen');
     const mainContent = document.getElementById('mainContent');
@@ -12,13 +6,7 @@ function revealContent() {
     mainContent.classList.add('revealed');
 }
 
-// script.js
-const background = document.getElementById('background');
-
-const backgroundLayer1 = document.getElementById('background-layer-1');
-const backgroundLayer2 = document.getElementById('background-layer-2');
-
-let isSpaceActive = false; // Flag para controlar se o efeito do "Space" está ativo
+let isClickActive = false; // Flag para controlar se o efeito do clique está ativo
 
 // Função para atualizar a posição do background com base nas coordenadas do mouse
 function updateBackgroundPosition(mouseX, mouseY) {
@@ -34,7 +22,7 @@ function updateBackgroundPosition(mouseX, mouseY) {
 
 // Evento de movimento do mouse
 document.addEventListener('mousemove', (e) => {
-    if (!isSpaceActive) { // Só atualiza se o efeito do "Space" não estiver ativo
+    if (!isClickActive) { // Só atualiza se o efeito do clique não estiver ativo
         const mouseX = e.clientX;
         const mouseY = e.clientY;
 
@@ -43,11 +31,11 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
-// Evento de tecla "Space"
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && !isSpaceActive) { // Evita múltiplas ativações
-        // Ativa a flag do efeito do "Space"
-        isSpaceActive = true;
+// Evento de clique do mouse
+document.addEventListener('click', (e) => {
+    if (!isClickActive) { // Evita múltiplas ativações
+        // Ativa a flag do efeito do clique
+        isClickActive = true;
 
         // Simula a posição do mouse na parte inferior da tela
         const mouseX = window.innerWidth / 2; // Centraliza horizontalmente
@@ -56,12 +44,21 @@ document.addEventListener('keydown', (e) => {
         // Atualiza a posição do background como se o mouse estivesse lá em baixo
         updateBackgroundPosition(mouseX, mouseY);
 
-        // Desativa o efeito após 3 segundos (3000 milissegundos)
+        // Revela o conteúdo
+        revealContent();
+
+        // Desativa o efeito após 5 segundos (5000 milissegundos)
         setTimeout(() => {
-            isSpaceActive = false;
+            isClickActive = false;
         }, 5000); // Altere o valor para ajustar o tempo de desativação
     }
 });
+
+// script.js
+const background = document.getElementById('background');
+
+const backgroundLayer1 = document.getElementById('background-layer-1');
+const backgroundLayer2 = document.getElementById('background-layer-2');
 
 // Cria o elemento do cursor personalizado
 const cursor = document.createElement('div');
@@ -215,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         typeSpeed: 50, // Velocidade da digitação (em milissegundos)
         backSpeed: 30, // Velocidade para apagar (em milissegundos)
         backDelay: 1000, // Tempo de espera antes de apagar (em milissegundos)
-        startDelay: 500, // Tempo de espera antes de começar (em milissegundos)
+        startDelay: 13500, // Tempo de espera antes de começar (em milissegundos)
         loop: true, // Repetir a animação infinitamente
         showCursor: true, // Mostrar cursor piscando
         cursorChar: "|", // Caractere do cursor
@@ -230,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = {
         strings: [
             "Olá!",
-            "Pressione a tecla ESPAÇO",
+            "Clique em qualquer lugar para entrar no terminal.",
             "...",
         ],
         typeSpeed: 50, // Velocidade da digitação (em milissegundos)

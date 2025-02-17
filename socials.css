@@ -1,0 +1,301 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: none;
+  overflow: hidden; /* Hide scrollbars */
+  background-color: #080808;
+}
+
+label {
+  position: relative;
+  cursor: none;
+}
+
+label svg {
+  position: absolute;
+  left: 1.1rem;
+  top: 8.1rem;
+  transform: translateY(-50%);
+  color: #393838;
+  transition: color 0.2s;
+}
+
+label:focus-within svg {
+  color: #f5f8ff;
+}
+
+label:focus-within svg {
+  color: #f5f8ff;
+}
+
+label input {
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: #f5f8ff;
+
+  background: rgba(20, 20, 20, 0.808);
+  padding: 1rem 1.4rem 1rem 3.2rem;
+  min-width: 12rem;
+
+  outline: none;
+  border: 0.15rem solid transparent;
+  border-radius: 0.4rem;
+
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-top: 100px;
+  pointer-events: none;
+  cursor: none;
+}
+
+label:hover input {
+  border-color: rgba(245, 248, 255, 0.02);
+  box-shadow: 0 0 0 0.9rem #080808;
+}
+
+label input::placeholder {
+  color: #393838;
+}
+
+label input:focus {
+  border-color: #393838;
+  box-shadow: 0 0 0 0.4rem rgba(44, 44, 44, 0.15);
+}
+
+input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#suggestions {
+    position: absolute;
+    left: 23px;
+    width: 85%;
+    max-height: 50px;
+    overflow-y: auto;
+    border: 1px solid #ffffff1e;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    font-size: 1rem;
+    color: #f5f8ff;
+    padding: 1px 1px 1px 1px;
+    min-width: 12rem;
+  
+    outline: none;
+    border: 0.15rem solid transparent;
+    border-radius: 0.4rem;
+  
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(-10px); /* Começa um pouco acima */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none; /* Mantém o display none para evitar interações iniciais */
+    cursor: none;
+}
+
+#suggestions.visible {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Move para a posição correta */
+}
+
+#suggestions li {
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    animation: ease-in 0.3s;
+    font-family: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5f8ff;
+    background: rgba(20, 20, 20, 0.808);
+    outline: none;
+    border: 0.15rem solid transparent;
+    border-radius: 0.4rem;
+    cursor: none;
+    border-color: #393838;
+}
+
+#suggestions li:hover {
+    background-color: rgba(245, 248, 255, 0.025);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#searchbar {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container .i {
+  color: whitesmoke;
+}
+
+/* Estilos para o cursor */
+.cursor {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #1b1b1bfb; /* Cor da bolinha */
+  border-radius: 50%; /* Forma circular */
+  pointer-events: none; /* Impede que o cursor interaja com outros elementos */
+  transform: translate(-50%, -50%);
+  animation: brilho 1.5s infinite alternate; /* Animação de brilho */
+  box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.938); /* Efeito de brilho */
+}
+
+/* Animação para o brilho da bolinha */
+@keyframes brilho {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.6);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+  box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.6); /* Efeito de brilho */
+  }
+}
+
+/* UBUNTU COISAS */
+
+#containerterminal {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  height: 50vh;
+} 
+#terminal {  
+  width: 70vw;  
+  height: 65vh;
+  background-color: rgb(27, 27, 27);
+  border-radius: 10px;
+} 
+#terminal__bar {  
+  display: flex;  
+  width: 100%;  
+  height: 30px;  
+  align-items: center;  
+  padding: 0 8px;  
+  box-sizing: border-box;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  text-shadow: rgba(19, 21, 22, 0.8) 0px 1px 0px;
+  background-color: rgb(23, 25, 26);
+  background-image: -webkit-linear-gradient(top, rgb(32, 36, 38), rgb(59, 64, 67));
+  box-shadow: rgba(19, 21, 22, 0.7) 0px 1px 1px inset;
+  border-bottom-color: rgb(104, 97, 84);
+} 
+
+#bar__buttons {  
+  display: flex;  
+  align-items: center;
+  cursor: none;
+} 
+.bar__button {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  padding: 0;  
+  margin-right: 5px;  
+  font-size: 8px;  
+  height: 12px;  
+  width: 12px;  
+  box-sizing: border-box;  
+  border: none;  
+  border-radius: 100%;  
+  background: linear-gradient(#7d7871 0%, #595953 100%);  
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.2);  
+  box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
+  cursor: none;
+}
+.bar__button:focus {  
+  outline: none;
+}
+#bar__button--exit {  
+  background: linear-gradient(#f37458 0%, #de4c12 100%);    
+  background-clip: padding-box;
+} 
+#bar__user {   
+  color: #d5d0ce;  
+  margin-left: 6px;  
+  font-size: 14px;  
+  line-height: 15px;
+} 
+#terminal__body {  
+  background: rgba(0, 0, 0, 0.267);  
+  font-family: 'Ubuntu Mono';  
+  height: calc(100% - 30px);  
+  padding-top: 2px;  
+  margin-top: -1px;
+} 
+#terminal__prompt {  
+  display: flex;
+}
+#terminal__prompt--user {  
+  margin-top: 13px;
+  color: #7eda28;
+}
+#terminal__prompt--location { 
+  margin-top: 13px;
+  color: #4878c0;
+}
+#terminal__prompt--bling { 
+  margin-top: 13px;
+  color: #dddddd;
+}
+#terminal__prompt--cursor {  
+  display: block;  
+  height: 17px;  
+  width: 8px;  
+  margin-left: 1px;  
+  margin-top: 13px;
+  animation: blink 1200ms linear infinite;
+  border-radius: 0px;
+} 
+@keyframes blink {  
+  0% {    
+    background: rgba(255, 255, 255, 0.384);  
+  }  
+  49% {    
+    background: #ffffff;  
+  }  
+  60% {    
+    background: transparent;  
+  }  
+  99% {    
+    background: transparent;  
+  }  100% {    
+    background: #ffffff70;  
+  }
+} 
+@media (max-width: 600px) {  
+  #containerterminal {    
+    max-height: 90%;    
+    width: 90%;  
+  }
+}
+
+.verdetexto {
+  position: relative;
+  color: #7eda28de;
+  padding-left: 5px;
+  padding-top: 3px;
+  font-size: 14px; 
+  font-family: 'Ubuntu Mono'; 
+  outline: none;
+}
+
+/* .verdetexto span {
+  font-family: Arial, Helvetica, sans-serif;
+} */

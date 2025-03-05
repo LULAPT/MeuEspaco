@@ -636,7 +636,6 @@ body {
                     justify-content: space-between;
                     margin-top: 10px;
                     margin-bottom: 10px;
-                    cursor: url('/media/Dot\ No.cur'), auto;
                     transition: transform 0.3s ease;
                 }
         

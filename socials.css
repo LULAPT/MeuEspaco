@@ -237,7 +237,7 @@ input::selection {
   line-height: 15px;
 } 
 #terminal__body {  
-  background: rgba(0, 0, 0, 0.267);   
+  background: rgba(0, 0, 0, 0.192);   
   font-family: 'Ubuntu Mono';  
   height: calc(100% - 30px);  
   padding-top: 2px;  

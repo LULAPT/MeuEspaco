@@ -9,7 +9,7 @@ body, html {
     cursor: none;
     filter: contrast(1.05);
     overflow: hidden;
-    background-color: #000000;
+    background-color: #1c1c1d;
 }
 
 .lockscreen {
@@ -18,7 +18,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    color: rgb(0, 0, 0);
+    color: #1c1c1d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,10 +40,11 @@ body, html {
     flex-direction: column;
     transition: transform 5s ease-in-out;
     background: linear-gradient(0deg, #1c1c1d 96%, #000000 100%);
+    /* background-position-y: 100x; */
 }
 
 .main-content.revealed {
-    transform: translateY(-100%);
+    transform: translateY(-102%);
 }
 
 .lockscreen.hidden {

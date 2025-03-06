@@ -33,12 +33,13 @@ body, html {
     top: 100%;
     width: 100%;
     height: 100%;
-    background-color: #010001;
+    background-color: #1c1c1d; /* Cor inicial */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition: transform 5s ease-in-out;
+    background: linear-gradient(0deg, #1c1c1d 96%, #000000 100%);
 }
 
 .main-content.revealed {

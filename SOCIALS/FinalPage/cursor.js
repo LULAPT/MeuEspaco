@@ -260,3 +260,6 @@ var sparkles=90;// increase of decrease for number of sparkles falling
 // 	return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
 // }
 // ]]>
+
+
+

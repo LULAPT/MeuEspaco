@@ -10,25 +10,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   cursor: none;
   overflow: hidden; /* Hide scrollbars */
-  background-color: #080808;
 }
 
 label {
   position: relative;
-  cursor: none;
+  top: 10%;
 }
 
 label svg {
   position: absolute;
-  left: 1.1rem;
-  top: 8.1rem;
+  top: 50%;
+
   transform: translateY(-50%);
   color: #393838;
   transition: color 0.2s;
-}
-
-label:focus-within svg {
-  color: #f5f8ff;
+  left: 1rem;
 }
 
 label:focus-within svg {
@@ -40,27 +36,26 @@ label input {
   font-size: 1.2rem;
   color: #f5f8ff;
 
-  background: rgba(20, 20, 20, 0.808);
+  background: rgba(245, 248, 255, 0.025);
   padding: 1rem 1.4rem 1rem 3.2rem;
   min-width: 12rem;
 
   outline: none;
   border: 0.15rem solid transparent;
+  border-color: #39383867;
   border-radius: 0.4rem;
 
   transition: border-color 0.2s, box-shadow 0.2s;
-  margin-top: 100px;
-  pointer-events: none;
   cursor: none;
 }
 
 label:hover input {
   border-color: rgba(245, 248, 255, 0.02);
-  box-shadow: 0 0 0 0.9rem #080808;
 }
 
 label input::placeholder {
   color: #393838;
+  user-select: none;
 }
 
 label input:focus {
@@ -74,6 +69,11 @@ input {
     outline: 0;
     font-size: 18px;
     color: #333;
+}
+
+input::selection {
+  background-color: transparent; /* Remove o fundo azul */
+  color: inherit; /* Mantém a cor do texto original */
 }
 
 #suggestions {
@@ -120,17 +120,20 @@ input {
     font-family: inherit;
     font-family: Arial, Helvetica, sans-serif;
     color: #f5f8ff;
-    background: rgba(20, 20, 20, 0.808);
+    background-color: rgba(245, 248, 255, 0.025);
+    transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
     border: 0.15rem solid transparent;
     border-radius: 0.4rem;
     cursor: none;
     border-color: #393838;
+    transition: ease-in 0.3s;
 }
 
 #suggestions li:hover {
-    background-color: rgba(245, 248, 255, 0.025);
-    transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: rgb(24, 24, 24);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: ease-in 0.3s;
 }
 
 #searchbar {
@@ -179,6 +182,7 @@ input {
   height: 65vh;
   background-color: rgb(27, 27, 27);
   border-radius: 10px;
+  border-color: #707070;
 } 
 #terminal__bar {  
   display: flex;  
@@ -193,7 +197,7 @@ input {
   text-shadow: rgba(19, 21, 22, 0.8) 0px 1px 0px;
   background-color: rgb(23, 25, 26);
   background-image: -webkit-linear-gradient(top, rgb(32, 36, 38), rgb(59, 64, 67));
-  box-shadow: rgba(19, 21, 22, 0.7) 0px 1px 1px inset;
+  box-shadow: rgba(184, 184, 184, 0.7) 0px 1px 1px inset;
   border-bottom-color: rgb(104, 97, 84);
 } 
 
@@ -233,11 +237,12 @@ input {
   line-height: 15px;
 } 
 #terminal__body {  
-  background: rgba(0, 0, 0, 0.267);  
+  background: rgba(0, 0, 0, 0.267);   
   font-family: 'Ubuntu Mono';  
   height: calc(100% - 30px);  
   padding-top: 2px;  
   margin-top: -1px;
+  border-radius: 0 0 5px 5px; /* Arredonda apenas os cantos inferiores */
 } 
 #terminal__prompt {  
   display: flex;

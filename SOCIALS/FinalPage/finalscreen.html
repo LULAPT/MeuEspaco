@@ -11,7 +11,7 @@
 <body>
 
     <div id="overlay">
-        <button id="enterButton">click</button>
+        <button id="enterButton">[ click ]</button>
     </div>
 
     <div id="background"></div>
@@ -36,7 +36,7 @@
         </div>
     </div>
 </div>
-        <div class="container">
+<div class="container" id="container" style="will-change: transform; transition: 700ms cubic-bezier(0.03, 0.98, 0.52, 0.99); transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
 
             <div class="scanlines"></div>
 
@@ -98,7 +98,7 @@
             <div class="progress-container">
                 <div class="progress"></div>
             </div>
-            <audio id="audio" src="/media/Yume 2kki.mp3" autoplay></audio>
+            <audio id="audio" src="/media/Lotus.mp3" autoplay></audio>
         </div>
         
 
@@ -165,6 +165,36 @@
         cancelButton.addEventListener('click', function() {
             popupOverlay.classList.remove('active'); // Oculta o popup
         });
+    </script>
+    <script>
+        const container = document.getElementById('container');
+
+container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const offsetX = (x - centerX) / centerX;
+    const offsetY = (y - centerY) / centerY;
+    const intensity = 10;
+
+    container.style.transform = `
+        perspective(1000px)
+        rotateX(${offsetY * intensity}deg)
+        rotateY(${offsetX * intensity}deg)
+        scale3d(1, 1, 1)
+    `;
+});
+
+container.addEventListener('mouseleave', () => {
+    container.style.transform = `
+        perspective(1000px)
+        rotateX(0deg)
+        rotateY(0deg)
+        scale3d(1, 1, 1)
+    `;
+});
     </script>
 </body>
 </html>

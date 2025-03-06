@@ -54,7 +54,7 @@ body {
   }
 
 .container {
-    height: auto;
+    height: 60hv;
     background-color: rgba(12, 12, 12, 0.356);
     padding: 20px;
     border-radius: 10px;
@@ -67,9 +67,29 @@ body {
     background-size: cover;
     background-origin: border-box;
     backdrop-filter: blur(5px);
-    animation: pulse 4s infinite;
+    /* animation: pulse 4s infinite; */
     width: fit-content;
     border: 1px solid white;
+    top: 10%;
+    transition: transform 700ms cubic-bezier(0.03, 0.98, 0.52, 0.99);
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%; /* Aumenta a largura máxima em telas menores */
+        padding: 1em; /* Reduz o padding */
+        margin: 5% auto; /* Ajusta a margem */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%; /* Ocupa toda a largura em telas muito pequenas */
+        padding: 0.8em; /* Reduz ainda mais o padding */
+        border-radius: 8px; /* Ajusta o border-radius */
+        margin: 2% auto; /* Ajusta a margem */
+    }
 }
 
 .container .profile {
@@ -446,21 +466,42 @@ body {
                  /* PLAYER DE MSC */
 
                  .player {
-                    backdrop-filter: #24242425;
-                    background-size: cover;
                     backdrop-filter: blur(5px);
                     background-color: rgba(12, 12, 12, 0.356);
                     border-radius: 15px;
                     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.548);
-                    padding: 15px;
-                    width: 350px;
+                    padding: 1.5em; /* Usando em para padding */
+                    width: 100%; /* Usando % para largura */
+                    max-width: 350px; /* Largura máxima */
                     text-align: center;
-                    bottom: 0px;
                     position: relative;
                     transition: all 0.3s ease;
-                    margin-top: 70px;
-                    max-height: 150px;
+                    margin-top: 5vh; /* Usando vh para margem superior */
+                    max-height: 20vh; /* Usando vh para altura máxima */
                     border: 1px solid white;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                /* Media Queries para ajustes em telas menores */
+                @media (max-width: 768px) {
+                    .player {
+                        width: 95%; /* Aumenta a largura em telas menores */
+                        max-width: none; /* Remove a largura máxima */
+                        padding: 1em; /* Reduz o padding */
+                        margin-top: 3vh; /* Ajusta a margem superior */
+                        max-height: 25vh; /* Aumenta a altura máxima */
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .player {
+                        width: 100%; /* Ocupa toda a largura em telas muito pequenas */
+                        border-radius: 10px; /* Reduz o border-radius */
+                        padding: 0.8em; /* Reduz ainda mais o padding */
+                        margin-top: 2vh; /* Ajusta a margem superior */
+                        max-height: 30vh; /* Aumenta a altura máxima */
+                    }
                 }
 
                 .player:hover {

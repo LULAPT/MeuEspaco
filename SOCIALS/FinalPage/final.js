@@ -1,29 +1,39 @@
-
-// script.js
 const background = document.getElementById('background');
+const backgroundLayer1 = document.getElementById('background-layer-1');
+const backgroundLayer2 = document.getElementById('background-layer-2');
+
+let mouseX = 0;
+let mouseY = 0;
+let ticking = false;
 
 document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            updateBackgrounds();
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
 
+function updateBackgrounds() {
     // Calculate the percentage of mouse position relative to the window size
     const xPercentage = (mouseX / window.innerWidth) * 50;
     const yPercentage = (mouseY / window.innerHeight) * 50;
-
-    // Update the background position
+    
+    // Update the main background position
     background.style.backgroundPosition = `${xPercentage}% ${yPercentage}%`;
-});
-
-document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-
-    const xPercentage = (mouseX / window.innerWidth) * 110;
-    const yPercentage = (mouseY / window.innerHeight) * 110;
-
-    document.getElementById('background-layer-1').style.backgroundPosition = `${xPercentage}% ${yPercentage}%`;
-    document.getElementById('background-layer-2').style.backgroundPosition = `${xPercentage * 0.8}% ${yPercentage * 0.8}%`; // Slower movement for parallax
-});
+    
+    // Update the parallax layers
+    const xLayer1 = (mouseX / window.innerWidth) * 110;
+    const yLayer1 = (mouseY / window.innerHeight) * 110;
+    
+    backgroundLayer1.style.backgroundPosition = `${xLayer1}% ${yLayer1}%`;
+    backgroundLayer2.style.backgroundPosition = `${xLayer1 * 0.8}% ${yLayer1 * 0.8}%`;
+}
 
 // script.js
 document.addEventListener('DOMContentLoaded', () => {

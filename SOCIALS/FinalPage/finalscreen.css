@@ -87,6 +87,12 @@ body {
     }
 }
 
+@media (max-height: 300px) {
+    .container {
+        max-width: 90%; /* Ocupa toda a largura em telas muito pequenas */
+    }
+}
+
 .container .profile {
     pointer-events: none;
     border-radius: 50%;

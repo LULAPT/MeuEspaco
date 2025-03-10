@@ -77,18 +77,13 @@ body {
 /* Media Queries para telas menores */
 @media (max-width: 768px) {
     .container {
-        max-width: 95%; /* Aumenta a largura máxima em telas menores */
-        padding: 1em; /* Reduz o padding */
-        margin: 5% auto; /* Ajusta a margem */
+        max-width: 100%; /* Aumenta a largura máxima em telas menores */
     }
 }
 
 @media (max-width: 480px) {
     .container {
         max-width: 100%; /* Ocupa toda a largura em telas muito pequenas */
-        padding: 0.8em; /* Reduz ainda mais o padding */
-        border-radius: 8px; /* Ajusta o border-radius */
-        margin: 2% auto; /* Ajusta a margem */
     }
 }
 
@@ -499,9 +494,10 @@ body {
                 @media (max-width: 480px) {
                     .player {
                         width: 100%; /* Ocupa toda a largura em telas muito pequenas */
+                        height: 95%;
                         border-radius: 10px; /* Reduz o border-radius */
                         padding: 0.8em; /* Reduz ainda mais o padding */
-                        margin-top: 2vh; /* Ajusta a margem superior */
+                        margin-top: 5vh; /* Ajusta a margem superior */
                         max-height: 30vh; /* Aumenta a altura máxima */
                     }
                 }
@@ -872,7 +868,7 @@ body {
     top: 0;
     margin-top: 3px;
     width: 21.5rem;
-    height: 6.1rem;
+    height: 7rem;
     pointer-events: none;
     z-index: 300;
     opacity: .6;
@@ -891,5 +887,23 @@ body {
       background-size: 100% 4px;
       will-change: background, background-size;
       animation: scanlines .2s linear infinite;
+      border-radius: 10px;
     }
 }
+
+                /* Media Queries para ajustes em telas menores */
+                @media (max-width: 768px) {
+                    .scanlines2 {
+                        width: 100%; /* Aumenta a largura em telas menores */
+                        height: 95%;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .scanlines2 {
+                        width: 100%; /* Ocupa toda a largura em telas muito pequenas */
+                        border-radius: 10px; /* Reduz o border-radius */
+                        padding: 0.8em; /* Reduz ainda mais o padding */
+                        max-height: 30vh; /* Aumenta a altura máxima */
+                    }
+                }

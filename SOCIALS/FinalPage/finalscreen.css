@@ -825,7 +825,7 @@ body {
     left: 0;
     top: 0;
     width: 21.8rem;
-    height: 34.6rem;
+    height: 34.8rem;
     pointer-events: none;
     z-index: 300;
     opacity: .6;
@@ -844,6 +844,7 @@ body {
       background-size: 100% 4px;
       will-change: background, background-size;
       animation: scanlines .2s linear infinite;
+      border-radius: 10px;
     }
   }
   

@@ -64,7 +64,7 @@
                 <!-- Ícone de visualizações de perfil -->
                 <i class="fas fa-eye profile-views-icon"></i>
                 <!-- Texto de visualizações -->
-                <span class="profile-views-text">7,843</span>
+                <span class="profile-views-text">333</span>
             </div>
         </div>
 
@@ -168,8 +168,24 @@
         });
     </script>
     <script>
-        const container = document.getElementById('container');
+const container = document.getElementById('container');
 
+// Configurações iniciais
+container.style.transition = 'all 0.3s ease';
+container.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+
+// Efeito de hover - quando o mouse entra no container
+container.addEventListener('mouseenter', () => {
+    // Adiciona um brilho e eleva o elemento
+    container.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2), 0 0 15px rgba(255,255,255,0.5)';
+    container.style.transform = `
+        perspective(1000px)
+        translateY(-5px)
+        scale3d(1.05, 1.05, 1.05)
+    `;
+});
+
+// Efeito de movimento do mouse dentro do container
 container.addEventListener('mousemove', (e) => {
     const rect = container.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -180,15 +196,21 @@ container.addEventListener('mousemove', (e) => {
     const offsetY = (y - centerY) / centerY;
     const intensity = 15;
 
+    container.style.transition = 'transform 0.1s ease'; // Transição mais rápida para movimento suave
     container.style.transform = `
         perspective(1000px)
+        translateY(-5px)
         rotateX(${offsetY * intensity}deg)
         rotateY(${offsetX * intensity}deg)
-        scale3d(1, 1, 1)
+        scale3d(1.05, 1.05, 1.05)
     `;
 });
 
+// Quando o mouse sai do container
 container.addEventListener('mouseleave', () => {
+    // Retorna para o estado original com uma transição suave
+    container.style.transition = 'all 0.5s ease';
+    container.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
     container.style.transform = `
         perspective(1000px)
         rotateX(0deg)

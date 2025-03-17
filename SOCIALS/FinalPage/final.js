@@ -40,9 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = {
         strings: [
             "Amp it up.",
+            "Hate Machine.",
+            "⚠️",
             "we are 4ever.",
-            "Never hunger.",
-            "Never tired.",
+            "Keep Distance.",
             "Never fear.",
             ":wave:",
         ],

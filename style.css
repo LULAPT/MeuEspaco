@@ -9,7 +9,7 @@ body, html {
     filter: contrast(1.05);
     overflow: hidden;
     /* background: linear-gradient(180deg, #1c1c1d 100%, #000000 96%); */
-    background-color: #252525;
+    background-color: #202225;
     cursor: url(/media/cross_r.cur);
 }
 
@@ -40,7 +40,7 @@ body, html {
     align-items: center;
     flex-direction: column;
     transition: transform 5s ease-in-out;
-    background: linear-gradient(0deg, #2c2c2c8c 96%, #0a0a0a 100%);
+    background: linear-gradient(0deg, #202225 96%, #0a0a0a 100%);
     background-color: #1c1c1d;
     /* background-position-y: 100x; */
 }
@@ -170,112 +170,59 @@ footer {
     will-change: transform, opacity;
 }
 
-
-/* .cursor {
+/* Indicador de Rolagem Esticável */
+.indicador-rolagem {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #242424fb;
-    border-radius: 50%;
-    border-color: 1px white;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-  } */
-  
-  /* Animação para o brilho da bolinha */
-  @keyframes brilho {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.6);
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1.5);
-    box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.6); /* Efeito de brilho */
-    }
-  }
-
-  /* Scroll Down Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
+    width: 60px;
     height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    opacity: 0.8;
-  }
-  
-  .scroll-indicator__arrows {
-    position: absolute;
-    bottom: -20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -5px;
-  }
-  
-  .scroll-indicator__arrow {
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    transform: rotate(45deg);
-    margin-top: -5px;
-  }
-  
-  .scroll-indicator__arrow:nth-child(1) {
-    animation: arrowFade 2s infinite;
-    animation-delay: 0.5s;
-  }
-  
-  .scroll-indicator__arrow:nth-child(2) {
-    animation: arrowFade 2s infinite;
-    animation-delay: 0.6s;
-  }
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
 
-  .scroll-indicator__arrow:nth-child(3) {
-    animation: arrowFade 2s infinite;
-    animation-delay: 0.7s;
-  }
-  
-  @keyframes scrollWheel {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    50% {
-      transform: translateY(15px);
-      opacity: 0.5;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes arrowFade {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  /* Add responsiveness */
-  @media (max-width: 768px) {
-    .scroll-indicator {
-      bottom: 40px;
-    }
-    
-    .scroll-indicator__wheel {
-      width: 4px;
-      height: 8px;
-    }
-  }
+/* Usamos divs reais em vez de pseudoelementos para poder manipulá-las com JS */
+.seta-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+}
+
+.seta-esquerda, .seta-direita {
+    position: absolute;
+    top: 50%;
+    width: 20px; /* Largura inicial */
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.seta-esquerda {
+    right: 50%;
+    transform-origin: right;
+    transform: rotate(45deg) translateY(-50%);
+}
+
+.seta-direita {
+    left: 50%;
+    transform-origin: left;
+    transform: rotate(-45deg) translateY(-50%);
+}
+
+@keyframes pulsar {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+}
+
+/* Estado ativo (clique) */
+.indicador-rolagem:active .seta-esquerda,
+.indicador-rolagem:active .seta-direita {
+    background-color: #7289da;
+}

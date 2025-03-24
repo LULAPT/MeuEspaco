@@ -78,25 +78,6 @@ body {
     position: relative;
 }
 
-/* Media Queries para telas menores */
-@media (max-width: 768px) {
-    .container {
-        max-width: 100%; /* Aumenta a largura máxima em telas menores */
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        max-width: 100%; /* Ocupa toda a largura em telas muito pequenas */
-    }
-}
-
-@media (max-height: 300px) {
-    .container {
-        max-width: 90%; /* Ocupa toda a largura em telas muito pequenas */
-    }
-}
-
 .container .profile {
     pointer-events: none;
     border-radius: 50%;

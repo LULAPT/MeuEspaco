@@ -29,13 +29,13 @@
                 </footer>
         </div>
 
-        <div class="scroll-indicator">
-            <div class="scroll-indicator__arrows">
-              <div class="scroll-indicator__arrow"></div>
-              <div class="scroll-indicator__arrow"></div>
-              <div class="scroll-indicator__arrow"></div>
+        <div class="indicador-rolagem" id="indicadorRolagem">
+            <div class="circulo-fundo" id="circuloFundo"></div>
+            <div class="seta-container">
+                <div class="seta-esquerda" id="setaEsquerda"></div>
+                <div class="seta-direita" id="setaDireita"></div>
             </div>
-          </div>
+        </div>
 
     </div>
 </div>
@@ -123,6 +123,65 @@ input.addEventListener("input", () => {
     .replace(rxDashes, "-")
     .replace(rxDashStart, "");
 });
+    </script>
+    <script>
+        // Código JavaScript para o efeito de esticamento
+        const indicador = document.getElementById('indicadorRolagem');
+        const setaEsquerda = document.getElementById('setaEsquerda');
+        const setaDireita = document.getElementById('setaDireita');
+        const circulo = document.getElementById('circuloFundo');
+        
+        // Distância máxima para ativar o efeito (em pixels)
+        const distanciaMaxima = 300;
+        
+        // Valor máximo do esticamento (em pixels)
+        const esticamentoMaximo = 5;
+        const larguraInicial = 30;
+        
+        document.addEventListener('mousemove', (evento) => {
+            // Obter a posição do indicador
+            const retangulo = indicador.getBoundingClientRect();
+            const centroX = retangulo.left + retangulo.width / 2;
+            const centroY = retangulo.top + retangulo.height / 2;
+            
+            // Calcular a distância entre o mouse e o centro do indicador
+            const distanciaX = evento.clientX - centroX;
+            const distanciaY = evento.clientY - centroY;
+            const distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
+            
+            // Se o mouse estiver próximo o suficiente
+            if (distancia < distanciaMaxima) {
+                // Calcular o fator de esticamento baseado na distância
+                const fator = 1 - (distancia / distanciaMaxima);
+                const esticamento = esticamentoMaximo * fator;
+                
+                // Aplicar o esticamento
+                setaEsquerda.style.width = `${larguraInicial + esticamento}px`;
+                setaDireita.style.width = `${larguraInicial + esticamento}px`;
+                
+                // Aumentar o brilho e tamanho do círculo
+                circulo.style.transform = `translate(-50%, -50%) scale(${1 + fator * 0.5})`;
+                circulo.style.backgroundColor = `rgba(255, 255, 255, ${0.05 + fator * 0.15})`;
+                
+                // Parar a animação de pulsar quando o mouse estiver perto
+                circulo.style.animation = 'none';
+            } else {
+                // Resetar para o estado normal
+                setaEsquerda.style.width = `${larguraInicial}px`;
+                setaDireita.style.width = `${larguraInicial}px`;
+                circulo.style.transform = 'translate(-50%, -50%)';
+                circulo.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                circulo.style.animation = 'pulsar 2s infinite';
+            }
+        });
+        
+        // Adicionar funcionalidade de rolagem ao clicar
+        indicador.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>

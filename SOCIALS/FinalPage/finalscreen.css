@@ -293,41 +293,79 @@ body {
             opacity: 1;
         }
 
-                /* Estilo do container */
-                .profile-views-container {
-                    backdrop-filter: blur(20px);
-                    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.548); */
-                    display: inline-flex;
-                    align-items: center;
-                    padding: 10px 15px;
-                    border-radius: 20px; /* Bordas arredondadas */
-                    font-family: Arial, sans-serif;
-                    margin-top: 40px;
-                    border: 1px solid white;
-                    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.548);
-                    box-shadow: glow;
-                }
-        
-                /* Estilo do ícone */
-                .profile-views-icon {
-                    font-size: 18px;
-                    color: #ffffff; /* Cor do ícone */
-                    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
-                    -webkit-animation: glow1 1s ease-in-out infinite alternate;
-                    -moz-animation: glow1 1s ease-in-out infinite alternate;
-                    animation: glow1 1s ease-in-out infinite alternate;
-                }
-        
-                /* Estilo do texto */
-                .profile-views-text {
-                    color: #ffffff; /* Cor do texto */
-                    font-weight: bold;
-                    font-size: 1.3em;
-                    -webkit-animation: glow1 1s ease-in-out infinite alternate;
-                    -moz-animation: glow1 1s ease-in-out infinite alternate;
-                    animation: glow1 1s ease-in-out infinite alternate;
-                }
+/* Enhanced Profile Views Container */
+.profile-views-container {
+    backdrop-filter: blur(10px);
+    background-color: rgba(12, 12, 12, 0.4);
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-family: 'Satoshi', sans-serif;
+    margin-top: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
 
+
+
+/* Add scanlines effect to the views container */
+.profile-views-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-size: 100% 4px;
+    will-change: background, background-size;
+    animation: scanlines 0.2s linear infinite;
+    opacity: 0.3;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+/* Style for the icon */
+.profile-views-icon {
+    font-size: 20px;
+    color: #ffffff;
+    margin-right: 12px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 5px #ffffff3a, 0 0 10px #ffffff31, 0 0 15px #ffffff1e, 0 0 20px rgb(201, 201, 201);
+}
+
+/* Style for the text */
+.profile-views-text {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #ffffff3a, 0 0 10px #ffffff31, 0 0 15px #ffffff1e, 0 0 20px rgb(201, 201, 201);
+}
+
+/* Add a subtle background pulse animation */
+@keyframes viewsPulse {
+    0% {
+        background-color: rgba(12, 12, 12, 0.4);
+    }
+    50% {
+        background-color: rgba(30, 30, 40, 0.5);
+    }
+    100% {
+        background-color: rgba(12, 12, 12, 0.4);
+    }
+}
+
+.profile-views-container {
+    animation: viewsPulse 4s infinite;
+}
                 #overlay {
                     position: fixed;
                     background-color: rgba(0, 0, 0, 0.4);

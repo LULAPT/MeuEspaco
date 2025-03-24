@@ -124,64 +124,60 @@ input.addEventListener("input", () => {
     .replace(rxDashStart, "");
 });
     </script>
-    <script>
-        // Código JavaScript para o efeito de esticamento
-        const indicador = document.getElementById('indicadorRolagem');
-        const setaEsquerda = document.getElementById('setaEsquerda');
-        const setaDireita = document.getElementById('setaDireita');
-        const circulo = document.getElementById('circuloFundo');
-        
-        // Distância máxima para ativar o efeito (em pixels)
-        const distanciaMaxima = 300;
-        
-        // Valor máximo do esticamento (em pixels)
-        const esticamentoMaximo = 5;
-        const larguraInicial = 30;
-        
-        document.addEventListener('mousemove', (evento) => {
-            // Obter a posição do indicador
-            const retangulo = indicador.getBoundingClientRect();
-            const centroX = retangulo.left + retangulo.width / 2;
-            const centroY = retangulo.top + retangulo.height / 2;
-            
-            // Calcular a distância entre o mouse e o centro do indicador
+<script>
+    // Código JavaScript otimizado para o efeito de esticamento
+    const indicador = document.getElementById('indicadorRolagem');
+    const setaEsquerda = document.getElementById('setaEsquerda');
+    const setaDireita = document.getElementById('setaDireita');
+    const circulo = document.getElementById('circulo'); // Adicione esta linha se o círculo existir
+
+    // Constantes
+    const distanciaMaxima = 200;
+    const esticamentoMaximo = 5;
+    const larguraInicial = 30;
+    const centroX = indicador.getBoundingClientRect().left + indicador.getBoundingClientRect().width / 2;
+    const centroY = indicador.getBoundingClientRect().top + indicador.getBoundingClientRect().height / 2;
+
+    // Debouncing para melhorar o desempenho
+    let timeout;
+    document.addEventListener('mousemove', (evento) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
             const distanciaX = evento.clientX - centroX;
             const distanciaY = evento.clientY - centroY;
             const distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
-            
-            // Se o mouse estiver próximo o suficiente
+
             if (distancia < distanciaMaxima) {
-                // Calcular o fator de esticamento baseado na distância
                 const fator = 1 - (distancia / distanciaMaxima);
                 const esticamento = esticamentoMaximo * fator;
-                
-                // Aplicar o esticamento
+
                 setaEsquerda.style.width = `${larguraInicial + esticamento}px`;
                 setaDireita.style.width = `${larguraInicial + esticamento}px`;
-                
-                // Aumentar o brilho e tamanho do círculo
-                circulo.style.transform = `translate(-50%, -50%) scale(${1 + fator * 0.5})`;
-                circulo.style.backgroundColor = `rgba(255, 255, 255, ${0.05 + fator * 0.15})`;
-                
-                // Parar a animação de pulsar quando o mouse estiver perto
-                circulo.style.animation = 'none';
+
+                if (circulo) {
+                    circulo.style.transform = `translate(-50%, -50%) scale(${1 + fator * 0.5})`;
+                    circulo.style.backgroundColor = `rgba(255, 255, 255, ${0.05 + fator * 0.15})`;
+                    circulo.style.animation = 'none';
+                }
             } else {
-                // Resetar para o estado normal
                 setaEsquerda.style.width = `${larguraInicial}px`;
                 setaDireita.style.width = `${larguraInicial}px`;
-                circulo.style.transform = 'translate(-50%, -50%)';
-                circulo.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                circulo.style.animation = 'pulsar 2s infinite';
+                if (circulo) {
+                    circulo.style.transform = 'translate(-50%, -50%)';
+                    circulo.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                    circulo.style.animation = 'pulsar 2s infinite';
+                }
             }
+        }, 16); // 16ms para ~60fps
+    });
+
+    // Adicionar funcionalidade de rolagem ao clicar
+    indicador.addEventListener('click', () => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
         });
-        
-        // Adicionar funcionalidade de rolagem ao clicar
-        indicador.addEventListener('click', () => {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>

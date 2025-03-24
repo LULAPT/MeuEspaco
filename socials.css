@@ -241,6 +241,7 @@ input::selection {
 }
 #terminal__prompt--user {  
   margin-top: 13px;
+  margin-left: 10px;
   color: #7eda28;
 }
 #terminal__prompt--location { 

@@ -23,19 +23,22 @@
 
         <!-- Popup de confirmação -->
 <div class="popup-overlay" id="popupOverlay">
+
     <div class="popup">
-        <p>are you sure?</p>
-        <!-- <img
-        class="spinner"
-        alt="Loading…"
-        src="/media/loader.svg"
-      /> -->
-        <div class="popup-buttons">
-            <button class="confirm" id="confirmButton">ok</button>
-            <button class="cancel" id="cancelButton">cancel</button>
+            <div class="popup-header">
+      Warning!
+    </div>
+    <div class="popup-content">
+        <p>Você será redirecionado. Tem certeza que quer continuar?</p>
+    </div>
+       <div class="popup-actions">
+           <button class="btn btn-secondary" id="confirmButton">OK</button>
+           <button class="btn btn-primary" id="cancelButton">Cancel</button>
         </div>
     </div>
+
 </div>
+
 <div class="container" id="container" style="will-change: transform; transition: 700ms cubic-bezier(0.03, 0.98, 0.52, 0.99); transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
 
             <div class="scanlines"></div>
@@ -203,7 +206,7 @@ container.addEventListener('mousemove', (e) => {
     const centerY = rect.height / 2;
     const offsetX = (x - centerX) / centerX;
     const offsetY = (y - centerY) / centerY;
-    const intensity = 15;
+    const intensity = 8;
 
     container.style.transition = 'transform 0.1s ease'; // Transição mais rápida para movimento suave
     container.style.transform = `

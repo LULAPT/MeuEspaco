@@ -11,7 +11,7 @@ let isClickActive = false; // Flag para controlar se o efeito do clique está at
 // Função para atualizar a posição do background com base nas coordenadas do mouse
 function updateBackgroundPosition(mouseX, mouseY) {
     const xPercentage = (mouseX / window.innerWidth) * 100;
-    const yPercentage = (mouseY / window.innerHeight) * 100;
+    const yPercentage = (mouseY / window.innerHeight) * 40;
 
     // Atualiza a posição do background-layer-1
     backgroundLayer1.style.backgroundPosition = `${xPercentage}% ${yPercentage}%`;

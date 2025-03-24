@@ -25,11 +25,11 @@
 <div class="popup-overlay" id="popupOverlay">
     <div class="popup">
         <p>are you sure?</p>
-        <img
+        <!-- <img
         class="spinner"
         alt="Loading…"
         src="/media/loader.svg"
-      />
+      /> -->
         <div class="popup-buttons">
             <button class="confirm" id="confirmButton">ok</button>
             <button class="cancel" id="cancelButton">cancel</button>
@@ -64,7 +64,7 @@
                 <!-- Ícone de visualizações de perfil -->
                 <i class="fas fa-eye profile-views-icon"></i>
                 <!-- Texto de visualizações -->
-                <span class="profile-views-text">333</span>
+                <span class="profile-views-text">546</span>
             </div>
         </div>
 
@@ -138,7 +138,8 @@
         // Inicia a animação quando a página carrega
         typeTitle();
     </script>
-    <script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
         // Seleciona todos os links com a classe "trigger-popup"
         const links = document.querySelectorAll('.trigger-popup');
         const popupOverlay = document.getElementById('popupOverlay');
@@ -166,7 +167,15 @@
         cancelButton.addEventListener('click', function() {
             popupOverlay.classList.remove('active'); // Oculta o popup
         });
-    </script>
+        
+        // Fechar o popup ao clicar fora dele
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                popupOverlay.classList.remove('active');
+            }
+        });
+    });
+</script>
     <script>
 const container = document.getElementById('container');
 

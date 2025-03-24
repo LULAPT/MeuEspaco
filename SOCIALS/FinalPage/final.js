@@ -164,16 +164,3 @@ document.addEventListener('click', () => {
         audio.play();
     }
 });
-
-// Cria o elemento do cursor personalizado
-const cursor = document.createElement('div');
-cursor.classList.add('cursor');
-document.body.appendChild(cursor);
-
-// Atualiza a posição do cursor personalizado com base no movimento do mouse
-document.addEventListener('mousemove', (event) => {
-  const mouseX = event.clientX;
-  const mouseY = event.clientY;
-  cursor.style.left = `${mouseX}px`;
-  cursor.style.top = `${mouseY}px`;
-});

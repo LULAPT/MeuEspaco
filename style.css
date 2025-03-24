@@ -6,10 +6,11 @@ body, html {
     height: 100%;
     font-family: Arial, sans-serif;
     align-items: center;
-    cursor: none;
     filter: contrast(1.05);
     overflow: hidden;
-    background-color: #1c1c1d;
+    /* background: linear-gradient(180deg, #1c1c1d 100%, #000000 96%); */
+    background-color: #252525;
+    cursor: url(/media/cross_r.cur);
 }
 
 .lockscreen {
@@ -39,7 +40,8 @@ body, html {
     align-items: center;
     flex-direction: column;
     transition: transform 5s ease-in-out;
-    background: linear-gradient(0deg, #1c1c1d 96%, #000000 100%);
+    background: linear-gradient(0deg, #2c2c2c8c 96%, #0a0a0a 100%);
+    background-color: #1c1c1d;
     /* background-position-y: 100x; */
 }
 
@@ -72,7 +74,7 @@ body, html {
 header h1 span {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: #443d15;
+    color: #838383;
 }
 
 header p {
@@ -111,15 +113,17 @@ main {
 }
 
 .btn-primary {
-    background-color: #443d1523;
+    background-color: #3b3b3b23;
     color: #ffffff;
     cursor: none;
-    border: 1px solid #443d15;
+    border: 1.5px solid #838383;
+    backdrop-filter: blur(10px);
+
     pointer-events: none;
 }
 
 .btn-primary:hover {
-    background-color: #312c0f;
+    background-color: #838383;
 }
 
 footer {
@@ -128,18 +132,18 @@ footer {
     margin-top: 20px;
 }
 
-#background {
+/* #background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(/media/1718806537675377.png);
+    background: url(https://images2.alphacoders.com/722/thumb-1920-722403.png);
     z-index: -1;
     transition: background-position 0.1s ease-out;
-    transition: background-position 0.2s ease-out; /* Increased duration */
+    transition: background-position 0.2s ease-out;
     will-change: transform, opacity;
-}
+} */
 
 .background-layer {
     position: absolute;
@@ -153,30 +157,30 @@ footer {
 }
 
 #background-layer-1 {
-    background: url(/media/1718806537675377.png);
+    background: url(https://images3.alphacoders.com/129/thumb-1920-1294146.jpg);
     background-size: cover;
     will-change: transform, opacity;
+    opacity: 0.3;
 }
 
 #background-layer-2 {
-    background: url(/media/1718806537675377.png);
-    opacity: 0.2;
+    background: url(https://images3.alphacoders.com/129/thumb-1920-1294146.jpg);
+    opacity: 0.3;
     background-size: cover;
     will-change: transform, opacity;
 }
 
-/* Estilos para o cursor */
-.cursor {
+
+/* .cursor {
     position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: #1b1b1bfb; /* Cor da bolinha */
-    border-radius: 50%; /* Forma circular */
-    pointer-events: none; /* Impede que o cursor interaja com outros elementos */
+    width: 20px;
+    height: 20px;
+    background-color: #242424fb;
+    border-radius: 50%;
+    border-color: 1px white;
+    pointer-events: none;
     transform: translate(-50%, -50%);
-    animation: brilho 1.5s infinite alternate; /* Animação de brilho */
-    box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.938); /* Efeito de brilho */
-  }
+  } */
   
   /* Animação para o brilho da bolinha */
   @keyframes brilho {
@@ -187,5 +191,91 @@ footer {
     100% {
       transform: translate(-50%, -50%) scale(1.5);
     box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.6); /* Efeito de brilho */
+    }
+  }
+
+  /* Scroll Down Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0.8;
+  }
+  
+  .scroll-indicator__arrows {
+    position: absolute;
+    bottom: -20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5px;
+  }
+  
+  .scroll-indicator__arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(45deg);
+    margin-top: -5px;
+  }
+  
+  .scroll-indicator__arrow:nth-child(1) {
+    animation: arrowFade 2s infinite;
+    animation-delay: 0.5s;
+  }
+  
+  .scroll-indicator__arrow:nth-child(2) {
+    animation: arrowFade 2s infinite;
+    animation-delay: 0.6s;
+  }
+
+  .scroll-indicator__arrow:nth-child(3) {
+    animation: arrowFade 2s infinite;
+    animation-delay: 0.7s;
+  }
+  
+  @keyframes scrollWheel {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(15px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes arrowFade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .scroll-indicator {
+      bottom: 40px;
+    }
+    
+    .scroll-indicator__wheel {
+      width: 4px;
+      height: 8px;
     }
   }

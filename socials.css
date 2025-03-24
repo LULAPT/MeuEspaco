@@ -8,7 +8,7 @@ body {
   display: grid;
   place-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  cursor: none;
+  cursor: crosshair;
   overflow: hidden; /* Hide scrollbars */
   color: #1c1c1d;
 }
@@ -29,13 +29,13 @@ label svg {
 }
 
 label:focus-within svg {
-  color: #f5f8ff;
+  color: #413f3f;
 }
 
 label input {
   font-family: inherit;
   font-size: 1.2rem;
-  color: #f5f8ff;
+  color: #413f3f;
 
   background: rgba(245, 248, 255, 0.025);
   padding: 1rem 1.4rem 1rem 3.2rem;
@@ -47,7 +47,8 @@ label input {
   border-radius: 0.4rem;
 
   transition: border-color 0.2s, box-shadow 0.2s;
-  cursor: none;
+  cursor: crosshair;
+  background-color: #2c2c2c8c;
 }
 
 label:hover input {
@@ -105,7 +106,7 @@ input::selection {
     transform: translateY(-10px); /* Começa um pouco acima */
     transition: opacity 0.3s ease, transform 0.3s ease;
     display: none; /* Mantém o display none para evitar interações iniciais */
-    cursor: none;
+    cursor: crosshair;
 }
 
 #suggestions.visible {
@@ -120,21 +121,25 @@ input::selection {
     animation: ease-in 0.3s;
     font-family: inherit;
     font-family: Arial, Helvetica, sans-serif;
-    color: #f5f8ff;
-    background-color: rgba(245, 248, 255, 0.025);
+    color: #413f3f;
+    background-color: #f5f8ff06;
     transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
     border: 0.15rem solid transparent;
     border-radius: 0.4rem;
-    cursor: none;
+    cursor: crosshair;
     border-color: #393838;
     transition: ease-in 0.3s;
 }
 
 #suggestions li:hover {
-  background-color: rgb(24, 24, 24);
+  background-color: #1b1b1b06;
   transition: border-color 0.2s, box-shadow 0.2s;
   transition: ease-in 0.3s;
+}
+
+.search-container {
+  cursor: crosshair;
 }
 
 #searchbar {
@@ -143,19 +148,6 @@ input::selection {
 
 .search-container .i {
   color: whitesmoke;
-}
-
-/* Estilos para o cursor */
-.cursor {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: #1b1b1bfb; /* Cor da bolinha */
-  border-radius: 50%; /* Forma circular */
-  pointer-events: none; /* Impede que o cursor interaja com outros elementos */
-  transform: translate(-50%, -50%);
-  animation: brilho 1.5s infinite alternate; /* Animação de brilho */
-  box-shadow: 0 0 10px 3px rgba(17, 17, 17, 0.938); /* Efeito de brilho */
 }
 
 /* Animação para o brilho da bolinha */
@@ -181,9 +173,8 @@ input::selection {
 #terminal {  
   width: 70vw;  
   height: 65vh;
-  background-color: rgb(27, 27, 27);
+  background-color: rgba(27, 27, 27, 0.315);
   border-radius: 10px;
-  border-color: #707070;
 } 
 #terminal__bar {  
   display: flex;  
@@ -205,7 +196,7 @@ input::selection {
 #bar__buttons {  
   display: flex;  
   align-items: center;
-  cursor: none;
+  cursor: crosshair;
 } 
 .bar__button {  
   display: flex;  
@@ -222,7 +213,7 @@ input::selection {
   background: linear-gradient(#7d7871 0%, #595953 100%);  
   text-shadow: 0px 1px 0px rgba(255,255,255,0.2);  
   box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
-  cursor: none;
+  cursor: crosshair;
 }
 .bar__button:focus {  
   outline: none;
@@ -238,7 +229,7 @@ input::selection {
   line-height: 15px;
 } 
 #terminal__body {  
-  background: rgba(0, 0, 0, 0.185);   
+  background: rgba(8, 8, 8, 0.185);   
   font-family: 'Ubuntu Mono';  
   height: calc(100% - 30px);  
   padding-top: 2px;  

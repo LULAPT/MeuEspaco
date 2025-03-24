@@ -81,7 +81,7 @@ const suggestions = document.getElementById('suggestions');
 
 // Lista de sugestões (pode ser substituída por uma busca em um banco de dados ou API)
 const data = [
-    "Dharlan",
+    "dharlan",
 ];
 
 // Função para filtrar as sugestões

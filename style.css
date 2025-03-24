@@ -13,6 +13,21 @@ body, html {
     cursor: url(/media/cross_r.cur);
 }
 
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+::-moz-selection { /* Code for Firefox */
+   color: rgb(255, 255, 255);
+   background: rgb(255, 255, 255);
+
+ }
+ 
+ ::selection {
+   color: rgb(255, 255, 255);
+   background: rgb(102, 102, 102);
+ }
+
 .lockscreen {
     position: fixed;
     top: 0;

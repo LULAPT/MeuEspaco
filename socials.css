@@ -110,11 +110,12 @@ input::selection {
   padding: 12px 12px 12px 36px;
   position: relative;
   color: #dcddde;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   list-style: none;
   transition: background-color 0.1s ease;
   border-bottom: 1px solid #36393f;
+  font-style: italic;
 }
 
 #suggestions li:last-child {
@@ -136,7 +137,7 @@ input::selection {
   top: 50%;
   transform: translateY(-50%);
   color: #72767d;
-  font-size: 14px;
+  font-size: 25px;
 }
 
 /* Animate the typing experience */

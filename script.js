@@ -188,7 +188,7 @@ urlInput.addEventListener('keydown', function(event) {
     // Verifica se o valor da URL não está vazio
     if (url) {
       // Redireciona para a URL digitada
-      window.location.href="https://meu-espaco.vercel.app/SOCIALS/FinalPage/finalscreen.html";
+      window.location.href="https://dharlan-bio.vercel.app/SOCIALS/FinalPage/finalscreen.html";
     } else {
       alert('Por favor, insira uma URL válida.');
     }

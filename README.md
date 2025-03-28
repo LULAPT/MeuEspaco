@@ -1,10 +1,7 @@
-# Meu Projeto
+# page made to put it on my discord bio
 
-## Imagens do Projeto
+## Images
 
 ![Imagem Principal](img/main.png)
 
 ![Segunda Imagem](img/main2.png)
-
-## Descrição
-Adicione aqui uma descrição do seu projeto.
